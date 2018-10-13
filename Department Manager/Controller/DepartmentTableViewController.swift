@@ -19,7 +19,13 @@ class DepartmentTableViewController: UITableViewController {
         // Use the edit button item provided by the table view controller.
         navigationItem.leftBarButtonItem = editButtonItem
 
-        loadSamples()
+        if let savedDepartments = loadDepartments() {
+            departments += savedDepartments
+        }
+        else {
+            // Load the sample data.
+            loadSamples()
+        }
     }
 
     // MARK: - Table view data source
@@ -72,6 +78,7 @@ class DepartmentTableViewController: UITableViewController {
     @IBAction func unwindToDepartmentList(sender: UIStoryboardSegue) {
         if let sourceViewController = sender.source as? DepartmentViewController, let department = sourceViewController.department {
             department.id = departments[departments.count-1].id+1
+            department.initials = department.initials.uppercased()
             if let selectedIndexPath = tableView.indexPathForSelectedRow {
                 // Update an existing meal.
                 departments[selectedIndexPath.row] = department
@@ -86,7 +93,7 @@ class DepartmentTableViewController: UITableViewController {
             }
             
             // Save the meals.
-            //saveMeals()
+            saveDepartments()
         }
     }
     
@@ -102,5 +109,28 @@ class DepartmentTableViewController: UITableViewController {
         
         departments += [dep1, dep2, dep3]
     }
-
+    
+    private func saveDepartments() {
+        let isSuccessfulSave = NSKeyedArchiver.archiveRootObject(departments, toFile: Department.ArchiveURL.path)
+        if isSuccessfulSave {
+            os_log("Departments successfully saved.", log: OSLog.default, type: .debug)
+        } else {
+            os_log("Failed to save departments...", log: OSLog.default, type: .error)
+        }
+    }
+    
+    private func loadDepartments() -> [Department]?  {
+        return NSKeyedUnarchiver.unarchiveObject(withFile: Department.ArchiveURL.path) as? [Department]
+    }
+    
+    @IBAction func redirectToEmployee(_ sender: UIButton) {
+            let storyboard = UIStoryboard(name: "Employee", bundle: nil)
+            
+            guard let employeeController = storyboard.instantiateInitialViewController() as? EmployeeTableViewController else {
+                fatalError("Unable to get Employee as EmployeeTableViewController") }
+            
+        navigationController?.pushViewController(employeeController, animated: true)
+    }
+    
 }
+

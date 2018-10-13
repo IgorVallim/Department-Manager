@@ -10,12 +10,17 @@
 		3A07F4DD21713B9000198F02 /* DepartmentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A07F4DC21713B9000198F02 /* DepartmentTableViewCell.swift */; };
 		3A07F4DF2171418300198F02 /* Department.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A07F4DE2171418300198F02 /* Department.swift */; };
 		3A0DC4F02171389900CECC9A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A0DC4EF2171389900CECC9A /* AppDelegate.swift */; };
-		3A0DC4F52171389900CECC9A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A0DC4F32171389900CECC9A /* Main.storyboard */; };
+		3A0DC4F52171389900CECC9A /* Department.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A0DC4F32171389900CECC9A /* Department.storyboard */; };
 		3A0DC4F72171389B00CECC9A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3A0DC4F62171389B00CECC9A /* Assets.xcassets */; };
 		3A0DC4FA2171389B00CECC9A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A0DC4F82171389B00CECC9A /* LaunchScreen.storyboard */; };
 		3A0DC5052171389B00CECC9A /* Department_ManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A0DC5042171389B00CECC9A /* Department_ManagerTests.swift */; };
 		3A23C95621718426004DCA67 /* DepartmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A23C95521718426004DCA67 /* DepartmentViewController.swift */; };
 		3ABA827C21714F0C00244EB8 /* DepartmentTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ABA827B21714F0C00244EB8 /* DepartmentTableViewController.swift */; };
+		3AF7AE322172831400453B8B /* Employee.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3AF7AE312172831400453B8B /* Employee.storyboard */; };
+		3AF7AE34217284B100453B8B /* EmployeeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF7AE33217284B100453B8B /* EmployeeTableViewCell.swift */; };
+		3AF7AE362172868E00453B8B /* Employee.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF7AE352172868E00453B8B /* Employee.swift */; };
+		3AF7AE3821728B3300453B8B /* EmployeeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF7AE3721728B3300453B8B /* EmployeeTableViewController.swift */; };
+		3AF7AE3A2172AD5400453B8B /* EmployeeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF7AE392172AD5400453B8B /* EmployeeViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,7 +38,7 @@
 		3A07F4DE2171418300198F02 /* Department.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Department.swift; sourceTree = "<group>"; };
 		3A0DC4EC2171389900CECC9A /* Department Manager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Department Manager.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A0DC4EF2171389900CECC9A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		3A0DC4F42171389900CECC9A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		3A0DC4F42171389900CECC9A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Department.storyboard; sourceTree = "<group>"; };
 		3A0DC4F62171389B00CECC9A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3A0DC4F92171389B00CECC9A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3A0DC4FB2171389B00CECC9A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -42,6 +47,11 @@
 		3A0DC5062171389B00CECC9A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3A23C95521718426004DCA67 /* DepartmentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepartmentViewController.swift; sourceTree = "<group>"; };
 		3ABA827B21714F0C00244EB8 /* DepartmentTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepartmentTableViewController.swift; sourceTree = "<group>"; };
+		3AF7AE312172831400453B8B /* Employee.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Employee.storyboard; sourceTree = "<group>"; };
+		3AF7AE33217284B100453B8B /* EmployeeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeTableViewCell.swift; sourceTree = "<group>"; };
+		3AF7AE352172868E00453B8B /* Employee.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Employee.swift; sourceTree = "<group>"; };
+		3AF7AE3721728B3300453B8B /* EmployeeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeTableViewController.swift; sourceTree = "<group>"; };
+		3AF7AE392172AD5400453B8B /* EmployeeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +76,7 @@
 			isa = PBXGroup;
 			children = (
 				3A07F4DE2171418300198F02 /* Department.swift */,
+				3AF7AE352172868E00453B8B /* Employee.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -74,7 +85,9 @@
 			isa = PBXGroup;
 			children = (
 				3A07F4DC21713B9000198F02 /* DepartmentTableViewCell.swift */,
-				3A0DC4F32171389900CECC9A /* Main.storyboard */,
+				3AF7AE33217284B100453B8B /* EmployeeTableViewCell.swift */,
+				3A0DC4F32171389900CECC9A /* Department.storyboard */,
+				3AF7AE312172831400453B8B /* Employee.storyboard */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -84,6 +97,8 @@
 			children = (
 				3ABA827B21714F0C00244EB8 /* DepartmentTableViewController.swift */,
 				3A23C95521718426004DCA67 /* DepartmentViewController.swift */,
+				3AF7AE3721728B3300453B8B /* EmployeeTableViewController.swift */,
+				3AF7AE392172AD5400453B8B /* EmployeeViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -212,7 +227,8 @@
 			files = (
 				3A0DC4FA2171389B00CECC9A /* LaunchScreen.storyboard in Resources */,
 				3A0DC4F72171389B00CECC9A /* Assets.xcassets in Resources */,
-				3A0DC4F52171389900CECC9A /* Main.storyboard in Resources */,
+				3AF7AE322172831400453B8B /* Employee.storyboard in Resources */,
+				3A0DC4F52171389900CECC9A /* Department.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -231,10 +247,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				3A23C95621718426004DCA67 /* DepartmentViewController.swift in Sources */,
+				3AF7AE3A2172AD5400453B8B /* EmployeeViewController.swift in Sources */,
+				3AF7AE3821728B3300453B8B /* EmployeeTableViewController.swift in Sources */,
 				3A07F4DD21713B9000198F02 /* DepartmentTableViewCell.swift in Sources */,
 				3A0DC4F02171389900CECC9A /* AppDelegate.swift in Sources */,
+				3AF7AE362172868E00453B8B /* Employee.swift in Sources */,
 				3ABA827C21714F0C00244EB8 /* DepartmentTableViewController.swift in Sources */,
 				3A07F4DF2171418300198F02 /* Department.swift in Sources */,
+				3AF7AE34217284B100453B8B /* EmployeeTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -257,12 +277,12 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		3A0DC4F32171389900CECC9A /* Main.storyboard */ = {
+		3A0DC4F32171389900CECC9A /* Department.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				3A0DC4F42171389900CECC9A /* Base */,
 			);
-			name = Main.storyboard;
+			name = Department.storyboard;
 			sourceTree = "<group>";
 		};
 		3A0DC4F82171389B00CECC9A /* LaunchScreen.storyboard */ = {

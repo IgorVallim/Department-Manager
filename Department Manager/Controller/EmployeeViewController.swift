@@ -1,34 +1,34 @@
 //
-//  DepartmentViewController.swift
+//  EmployeeViewController.swift
 //  Dapartment Manager
 //
-//  Created by Igor Vallim on 12/10/2018.
+//  Created by Igor Vallim on 13/10/2018.
 //  Copyright © 2018 Igor Vallim. All rights reserved.
 //
 
-import os.log
 import UIKit
+import os.log
 
-class DepartmentViewController: UIViewController, UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate{
+class EmployeeViewController: UIViewController, UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
     @IBOutlet weak var name: UITextField!
+    @IBOutlet weak var rg: UITextField!
     @IBOutlet weak var photo: UIImageView!
-    @IBOutlet weak var initials: UITextField!
     @IBOutlet weak var saveButton: UIBarButtonItem!
     
-    var department: Department?
+    var employee: Employee?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         name.delegate = self
         
         // Set up views if editing an existing Meal.
-        if let department = department {
-            navigationItem.title = department.name
-            name.text = department.name
-            photo.image = department.photo
-            initials.text = department.initials
+        if let employee = employee {
+            navigationItem.title = employee.name
+            name.text = employee.name
+            photo.image = employee.photo
+            rg.text = String(employee.rg)
         }
         
         // Enable the Save button only if the text field has a valid Meal name.
@@ -74,16 +74,16 @@ class DepartmentViewController: UIViewController, UITextFieldDelegate, UIImagePi
     
     @IBAction func cancel(_ sender: UIBarButtonItem) {
         // Depending on style of presentation (modal or push presentation), this view controller needs to be dismissed in two different ways.
-        let isPresentingInAddDepartmentMode = presentingViewController is UINavigationController
+        let isPresentingInAddEmployeeMode = presentingViewController is UINavigationController
         
-        if isPresentingInAddDepartmentMode {
+        if isPresentingInAddEmployeeMode {
             dismiss(animated: true, completion: nil)
         }
         else if let owningNavigationController = navigationController{
             owningNavigationController.popViewController(animated: true)
         }
         else {
-            fatalError("The DepartmentViewController is not inside a navigation controller.")
+            fatalError("The EmployeeViewController is not inside a navigation controller.")
         }
     }
     
@@ -97,20 +97,19 @@ class DepartmentViewController: UIViewController, UITextFieldDelegate, UIImagePi
             return
         }
         
-        let nameDepart = name.text ?? ""
-        let photoDepart = photo.image
-        let initialsDepart = initials.text ?? ""
+        let nameEmp = name.text ?? ""
+        let photoEmp = photo.image
+        let rgEmp = 123456789 //arrumar isso dpois
         
         // Set the meal to be passed to MealTableViewController after the unwind segue.
-        department = Department(name: nameDepart, id: 0, initials: initialsDepart, photo: photoDepart) //Arrumar id
+        employee  = Employee(name: nameEmp, id: 0, depId: 0, rg: rgEmp, photo: photoEmp) //Tratar depId
     }
     
     @IBAction func selectImageFromPhotoLibrary(_ sender: UITapGestureRecognizer) {
-         
+        
         // Hide the keyboard.
         name.resignFirstResponder()
-        initials.resignFirstResponder()
-        
+        rg.resignFirstResponder()
         // UIImagePickerController is a view controller that lets a user pick media from their photo library.
         let imagePickerController = UIImagePickerController()
         
@@ -121,7 +120,7 @@ class DepartmentViewController: UIViewController, UITextFieldDelegate, UIImagePi
         imagePickerController.delegate = self
         present(imagePickerController, animated: true, completion: nil)
     }
-
+    
     private func updateSaveButtonState() {
         // Disable the Save button if the text field is empty.
         let text = name.text ?? ""
