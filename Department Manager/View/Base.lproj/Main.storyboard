@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="1Sm-qi-t7M">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Departamentos-->
+        <scene sceneID="iqd-sg-iqg">
+            <objects>
+                <tableViewController id="ehI-1I-Fp0" customClass="DepartmentTableViewController" customModule="Department_Manager" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="90" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="9vn-iX-UoC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="DepartmentTableViewCell" rowHeight="90" id="SID-FI-SNx" customClass="DepartmentTableViewCell" customModule="Department_Manager" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="90"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="SID-FI-SNx" id="OMg-cE-pXP" customClass="DepartmentTableViewCell" customModule="Department_Manager" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="89.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Sigla" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EuE-8V-QCv" userLabel="initials">
+                                            <rect key="frame" x="98" y="11" width="59.5" height="30"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="27"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Nome do departamento" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TdB-Qt-yPI" userLabel="name">
+                                            <rect key="frame" x="98" y="49" width="261" height="30"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="defaultPhoto" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mMI-eS-QR4" userLabel="photo">
+                                            <rect key="frame" x="0.0" y="1" width="88" height="88"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        </imageView>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="initials" destination="EuE-8V-QCv" id="3PK-xp-hj6"/>
+                                    <outlet property="name" destination="TdB-Qt-yPI" id="5Iy-v8-Avs"/>
+                                    <outlet property="photo" destination="mMI-eS-QR4" id="2tq-Fm-9jt"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="ehI-1I-Fp0" id="PtV-mJ-ehD"/>
+                            <outlet property="delegate" destination="ehI-1I-Fp0" id="k8A-rr-sap"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Departamentos" id="sKR-Ky-ZGg">
+                        <barButtonItem key="leftBarButtonItem" systemItem="edit" id="MfA-To-RpQ"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="8wi-eO-OrZ">
+                            <connections>
+                                <segue destination="f6I-sq-56l" kind="presentation" identifier="addDepartment" id="Lf0-HB-VX7"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Y3K-7Y-2vx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1839" y="152"/>
+        </scene>
+        <!--Department View Controller-->
+        <scene sceneID="Ejs-n6-Dox">
+            <objects>
+                <viewController id="uOx-B7-JO4" customClass="DepartmentViewController" customModule="Department_Manager" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Z88-NR-jmF">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nome do departamento." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="D2h-o3-rOx">
+                                <rect key="frame" x="16" y="86" width="343" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Sigla do departamento." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gCz-js-lz5">
+                                <rect key="frame" x="16" y="124" width="343" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
+                            </textField>
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="defaultPhoto" translatesAutoresizingMaskIntoConstraints="NO" id="VGF-Ak-OL2">
+                                <rect key="frame" x="16" y="162" width="343" height="344"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="oLS-sg-cnY" appends="YES" id="YWx-H9-r3v"/>
+                                </connections>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <gestureRecognizers/>
+                        <viewLayoutGuide key="safeArea" id="Iog-5K-KaE"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="UgK-us-5jP">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="n5m-hX-P2W">
+                            <connections>
+                                <action selector="cancel:" destination="uOx-B7-JO4" id="vbN-iK-mZB"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="9gb-r4-3j3">
+                            <connections>
+                                <segue destination="zqV-gP-qBE" kind="unwind" unwindAction="unwindToDepartmentListWithSender:" id="Bm8-fn-ked"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="initials" destination="gCz-js-lz5" id="aBb-Mc-aR5"/>
+                        <outlet property="name" destination="D2h-o3-rOx" id="6kM-vV-cqE"/>
+                        <outlet property="photo" destination="VGF-Ak-OL2" id="RRz-uG-bzI"/>
+                        <outlet property="saveButton" destination="9gb-r4-3j3" id="37J-Rf-53Y"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aVk-KQ-gt2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="zqV-gP-qBE" userLabel="Exit" sceneMemberID="exit"/>
+                <tapGestureRecognizer id="oLS-sg-cnY">
+                    <connections>
+                        <action selector="selectImageFromPhotoLibrary:" destination="uOx-B7-JO4" id="iFN-Tt-A9w"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="-111.2" y="151.57421289355324"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="hH9-ZD-BtB">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="1Sm-qi-t7M" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Ef3-aC-LHs">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="ehI-1I-Fp0" kind="relationship" relationship="rootViewController" id="Zgn-bR-I3c"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LA0-81-ExC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2636" y="152.47376311844079"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="ymo-09-RRf">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="f6I-sq-56l" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="DoU-IQ-aoq">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="uOx-B7-JO4" kind="relationship" relationship="rootViewController" id="Oav-I3-XBy"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wPv-Kn-SSX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1050.4000000000001" y="151.57421289355324"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="defaultPhoto" width="150" height="150"/>
+    </resources>
+</document>
