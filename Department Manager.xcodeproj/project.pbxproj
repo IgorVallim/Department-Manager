@@ -128,9 +128,9 @@
 				3A0DC4FB2171389B00CECC9A /* Info.plist */,
 				3A0DC4F82171389B00CECC9A /* LaunchScreen.storyboard */,
 				3A0DC4F62171389B00CECC9A /* Assets.xcassets */,
-				3A07F4DA217139C100198F02 /* Controller */,
-				3A07F4D9217139B800198F02 /* View */,
 				3A07F4D8217139AC00198F02 /* Model */,
+				3A07F4D9217139B800198F02 /* View */,
+				3A07F4DA217139C100198F02 /* Controller */,
 			);
 			path = "Department Manager";
 			sourceTree = "<group>";

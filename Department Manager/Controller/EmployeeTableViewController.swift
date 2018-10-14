@@ -72,9 +72,7 @@ class EmployeeTableViewController: UITableViewController {
                 // Update an existing meal.
                 for i in 0..<employees.count{
                     if employee.id==employees[i].id{
-                        print(employees[i].name)
                         employees[i] = employee
-                        print(employees[i].name)
                     }
                 }
                 depEmployees[selectedIndexPath.row] = employee
@@ -148,6 +146,24 @@ class EmployeeTableViewController: UITableViewController {
             
         default:
             fatalError("Unexpected Segue Identifier; \(String(describing: segue.identifier))")
+        }
+    }
+    
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            // Delete the row from the data source
+            let tempId = depEmployees[indexPath.row].id
+            depEmployees.remove(at: indexPath.row)
+            for i in 0..<employees.count{
+                if tempId==employees[i].id{
+                    employees.remove(at: i)
+                    break
+                }
+            }
+            saveEmployees()
+            tableView.deleteRows(at: [indexPath], with: .fade)
+        } else if editingStyle == .insert {
+            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
         }
     }
 

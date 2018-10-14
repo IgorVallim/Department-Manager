@@ -101,14 +101,25 @@ class EmployeeViewController: UIViewController, UITextFieldDelegate, UIImagePick
         
         let nameEmp = name.text ?? ""
         let photoEmp = photo.image
-        let rgEmp = 123456789 //arrumar isso dpois
+        if let rgEmp: Int = Int(rg.text ?? "0"){
+            if let id: Int = employee?.id{
+                employee  = Employee(name: nameEmp, id: id, depId: 0, rg: rgEmp, photo: photoEmp)
+            }else{
+                employee  = Employee(name: nameEmp, depId: 0, rg: rgEmp, photo: photoEmp)
+            }
+        }else{
+            let rgEmp = 0
+            if let id: Int = employee?.id{
+                employee  = Employee(name: nameEmp, id: id, depId: 0, rg: rgEmp, photo: photoEmp)
+            }else{
+                employee  = Employee(name: nameEmp, depId: 0, rg: rgEmp, photo: photoEmp)
+            }
+        }
+        
+        
         
         // Set the meal to be passed to MealTableViewController after the unwind segue.
-        if let id: Int = employee?.id{
-            employee  = Employee(name: nameEmp, id: id, depId: 0, rg: rgEmp, photo: photoEmp)
-        }else{
-                employee  = Employee(name: nameEmp, depId: 0, rg: rgEmp, photo: photoEmp)
-        }
+        
         
         
     }
