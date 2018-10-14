@@ -29,6 +29,8 @@ class EmployeeViewController: UIViewController, UITextFieldDelegate, UIImagePick
             name.text = employee.name
             photo.image = employee.photo
             rg.text = String(employee.rg)
+        }else{
+            navigationItem.title = "Novo funcionário"
         }
         
         // Enable the Save button only if the text field has a valid Meal name.
@@ -102,7 +104,13 @@ class EmployeeViewController: UIViewController, UITextFieldDelegate, UIImagePick
         let rgEmp = 123456789 //arrumar isso dpois
         
         // Set the meal to be passed to MealTableViewController after the unwind segue.
-        employee  = Employee(name: nameEmp, id: 0, depId: 0, rg: rgEmp, photo: photoEmp) //Tratar depId
+        if let id: Int = employee?.id{
+            employee  = Employee(name: nameEmp, id: id, depId: 0, rg: rgEmp, photo: photoEmp)
+        }else{
+                employee  = Employee(name: nameEmp, depId: 0, rg: rgEmp, photo: photoEmp)
+        }
+        
+        
     }
     
     @IBAction func selectImageFromPhotoLibrary(_ sender: UITapGestureRecognizer) {

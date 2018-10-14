@@ -24,7 +24,7 @@
                                 <navigationItem title="Funcionários" id="5TJ-bP-w6H">
                                     <barButtonItem key="rightBarButtonItem" systemItem="add" id="QUD-sk-11d">
                                         <connections>
-                                            <segue destination="rFI-OJ-frQ" kind="presentation" id="12E-1G-8zn"/>
+                                            <segue destination="rFI-OJ-frQ" kind="presentation" identifier="addEmployee" id="12E-1G-8zn"/>
                                         </connections>
                                     </barButtonItem>
                                 </navigationItem>
@@ -62,6 +62,7 @@
                                     <outlet property="name" destination="Ej5-oR-MZo" id="ZMy-2e-aAJ"/>
                                     <outlet property="photo" destination="H3h-ds-Yh8" id="x9c-IN-S9Q"/>
                                     <outlet property="rg" destination="Ny4-3V-bbw" id="GnQ-o3-NnZ"/>
+                                    <segue destination="Ca0-EP-qII" kind="show" identifier="showDetail" id="mQU-lR-k7j"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -70,6 +71,9 @@
                             <outlet property="delegate" destination="oHs-IT-pDQ" id="NSu-Ef-QFk"/>
                         </connections>
                     </tableView>
+                    <connections>
+                        <outlet property="employeesBar" destination="5TJ-bP-w6H" id="r2a-3F-kr0"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fVa-AH-EX5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -90,7 +94,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="RG do funcionário." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FmI-T1-oVU">
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="RG do funcionário (somente números)." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FmI-T1-oVU">
                                 <rect key="frame" x="16" y="121" width="343" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
@@ -141,6 +145,7 @@
         <!--Navigation Controller-->
         <scene sceneID="gTw-wj-NPB">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Tfn-nR-ypd" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="rFI-OJ-frQ" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="RZR-i9-bT8">
@@ -152,12 +157,14 @@
                         <segue destination="Ca0-EP-qII" kind="relationship" relationship="rootViewController" id="JCM-8D-XPx"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Tfn-nR-ypd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="536.79999999999995" y="96.7016491754123"/>
+            <point key="canvasLocation" x="566" y="448"/>
         </scene>
     </scenes>
     <resources>
         <image name="defaultPhoto" width="150" height="150"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="mQU-lR-k7j"/>
+    </inferredMetricsTieBreakers>
 </document>

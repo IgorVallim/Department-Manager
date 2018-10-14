@@ -25,6 +25,26 @@ class Department: NSObject, NSCoding{
     var id: Int
     var initials: String
     var photo: UIImage?
+    private static var identifierFactory: Int{
+        get{
+            return UserDefaults.standard.integer(forKey: "idF")
+        }
+        set{
+            UserDefaults.standard.set(newValue,forKey: "idF")
+        }
+    }
+    
+    private static func getUniqueIdentifier() -> Int{
+        identifierFactory+=1
+        return identifierFactory
+    }
+    
+    init(name: String, initials: String, photo: UIImage?){
+        self.name = name
+        self.initials = initials
+        self.id = Department.getUniqueIdentifier()
+        self.photo = photo
+    }
     
     init(name: String, id: Int, initials: String, photo: UIImage?){
         self.name = name

@@ -26,6 +26,7 @@ class DepartmentTableViewController: UITableViewController {
             // Load the sample data.
             loadSamples()
         }
+        departments = departments.sorted(by: {$0.name < $1.name})
     }
 
     // MARK: - Table view data source
@@ -68,7 +69,7 @@ class DepartmentTableViewController: UITableViewController {
         if editingStyle == .delete {
             // Delete the row from the data source
             departments.remove(at: indexPath.row)
-            //saveMeals()
+            saveDepartments()
             tableView.deleteRows(at: [indexPath], with: .fade)
         } else if editingStyle == .insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
@@ -77,7 +78,6 @@ class DepartmentTableViewController: UITableViewController {
     
     @IBAction func unwindToDepartmentList(sender: UIStoryboardSegue) {
         if let sourceViewController = sender.source as? DepartmentViewController, let department = sourceViewController.department {
-            department.id = departments[departments.count-1].id+1
             department.initials = department.initials.uppercased()
             if let selectedIndexPath = tableView.indexPathForSelectedRow {
                 // Update an existing meal.
@@ -93,6 +93,8 @@ class DepartmentTableViewController: UITableViewController {
             }
             
             // Save the meals.
+            departments = departments.sorted(by: {$0.name < $1.name})
+            tableView.reloadData()
             saveDepartments()
         }
     }
@@ -103,9 +105,9 @@ class DepartmentTableViewController: UITableViewController {
         let photo2 = UIImage(named: "dep2")
         let photo3 = UIImage(named: "dep3")
         
-        let dep1 = Department(name: "Tecnologia da informação", id: 1, initials: "TI", photo: photo1)
-        let dep2 = Department(name: "Finanças", id: 2, initials: "F", photo: photo2)
-        let dep3 = Department(name: "Publicidade e Propaganda", id: 3, initials: "PP", photo: photo3)
+        let dep1 = Department(name: "Tecnologia da informação", initials: "TI", photo: photo1)
+        let dep2 = Department(name: "Finanças", initials: "F", photo: photo2)
+        let dep3 = Department(name: "Publicidade e Propaganda", initials: "PP", photo: photo3)
         
         departments += [dep1, dep2, dep3]
     }
@@ -123,13 +125,52 @@ class DepartmentTableViewController: UITableViewController {
         return NSKeyedUnarchiver.unarchiveObject(withFile: Department.ArchiveURL.path) as? [Department]
     }
     
-    @IBAction func redirectToEmployee(_ sender: UIButton) {
-            let storyboard = UIStoryboard(name: "Employee", bundle: nil)
+
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        super.prepare(for: segue, sender: sender)
+        
+        switch(segue.identifier ?? "") {
             
-            guard let employeeController = storyboard.instantiateInitialViewController() as? EmployeeTableViewController else {
-                fatalError("Unable to get Employee as EmployeeTableViewController") }
+        case "addDepartment":
+            os_log("Adding a new meal.", log: OSLog.default, type: .debug)
             
-        navigationController?.pushViewController(employeeController, animated: true)
+        case "ShowDetail":
+            guard let mealDetailViewController = segue.destination as? DepartmentViewController else {
+                fatalError("Unexpected destination: \(segue.destination)")
+            }
+            
+            guard let selectedMealCell = sender as? DepartmentTableViewCell else {
+                fatalError("Unexpected sender: \(String(describing: sender))")
+            }
+            
+            guard let indexPath = tableView.indexPath(for: selectedMealCell) else {
+                fatalError("The selected cell is not being displayed by the table")
+            }
+            
+            let selectedMeal = departments[indexPath.row]
+            mealDetailViewController.department = selectedMeal
+            
+        case "showEmployees":
+            guard let mealDetailViewController = segue.destination as? EmployeeTableViewController else {
+                fatalError("Unexpected destination: \(segue.destination)")
+            }
+            
+            guard let selectedMealCell = sender as? DepartmentTableViewCell else {
+                fatalError("Unexpected sender: \(String(describing: sender))")
+            }
+            
+            guard let indexPath = tableView.indexPath(for: selectedMealCell) else {
+                fatalError("The selected cell is not being displayed by the table")
+            }
+            
+            let selectedMeal = departments[indexPath.row]
+            mealDetailViewController.department = selectedMeal
+            
+        default:
+            fatalError("Unexpected Segue Identifier; \(String(describing: segue.identifier))")
+        }
     }
     
 }

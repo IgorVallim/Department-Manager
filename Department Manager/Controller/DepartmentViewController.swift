@@ -102,7 +102,7 @@ class DepartmentViewController: UIViewController, UITextFieldDelegate, UIImagePi
         let initialsDepart = initials.text ?? ""
         
         // Set the meal to be passed to MealTableViewController after the unwind segue.
-        department = Department(name: nameDepart, id: 0, initials: initialsDepart, photo: photoDepart) //Arrumar id
+        department = Department(name: nameDepart, initials: initialsDepart, photo: photoDepart) //Arrumar id
     }
     
     @IBAction func selectImageFromPhotoLibrary(_ sender: UITapGestureRecognizer) {

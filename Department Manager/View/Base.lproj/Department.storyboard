@@ -43,14 +43,6 @@
                                             <rect key="frame" x="0.0" y="1" width="88" height="88"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         </imageView>
-                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n4t-Rp-poE">
-                                            <rect key="frame" x="320" y="21" width="39" height="47"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <state key="normal" image="defaultButton"/>
-                                            <connections>
-                                                <action selector="redirectToEmployee:" destination="ehI-1I-Fp0" eventType="touchUpInside" id="QT7-oW-Mcb"/>
-                                            </connections>
-                                        </button>
                                     </subviews>
                                 </tableViewCellContentView>
                                 <gestureRecognizers/>
@@ -58,6 +50,7 @@
                                     <outlet property="initials" destination="EuE-8V-QCv" id="3PK-xp-hj6"/>
                                     <outlet property="name" destination="TdB-Qt-yPI" id="5Iy-v8-Avs"/>
                                     <outlet property="photo" destination="mMI-eS-QR4" id="2tq-Fm-9jt"/>
+                                    <segue destination="YZ0-Nd-shm" kind="show" identifier="showEmployees" id="d29-3m-dcL"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -161,6 +154,14 @@
             </objects>
             <point key="canvasLocation" x="-2636" y="152.47376311844079"/>
         </scene>
+        <!--Employee-->
+        <scene sceneID="Hdw-qz-pI0">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Employee" id="YZ0-Nd-shm" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="a9K-ZI-22f" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1278" y="-291"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="ymo-09-RRf">
             <objects>
@@ -181,7 +182,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="defaultButton" width="256" height="256"/>
         <image name="defaultPhoto" width="150" height="150"/>
     </resources>
 </document>
