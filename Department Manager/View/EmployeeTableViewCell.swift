@@ -10,20 +10,21 @@ import UIKit
 
 class EmployeeTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var photo: UIImageView!
-    @IBOutlet weak var name: UILabel!
-    @IBOutlet weak var rg: UILabel!
+    //Mark: Atributos do IB
     
+    @IBOutlet weak var photo: UIImageView! //ImageView contendo a foto do funcionário
+    @IBOutlet weak var name: UILabel! //Label contendo o nome do funcionario
+    @IBOutlet weak var rg: UILabel! //Label contendo o RG do funcionario
+    
+    
+    //Mark: Funcoes da classe
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
     }
 
 }

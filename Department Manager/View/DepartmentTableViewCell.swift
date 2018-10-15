@@ -10,19 +10,21 @@ import UIKit
 
 class DepartmentTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var photo: UIImageView!
-    @IBOutlet weak var name: UILabel!
-    @IBOutlet weak var initials: UILabel!
+    //Mark: Atributos do IB
+    
+    @IBOutlet weak var photo: UIImageView! //ImageView contendo a imagem do departamento
+    @IBOutlet weak var name: UILabel! //Campo de texto contendo o nome do departamento
+    @IBOutlet weak var initials: UILabel! //Campo de texto contendo a sigla do departamento
+    
+    //Mark: Funcoes da classe
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
-        // Configure the view for the selected state
     }
 
 }
