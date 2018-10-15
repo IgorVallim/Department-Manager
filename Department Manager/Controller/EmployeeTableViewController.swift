@@ -1,6 +1,6 @@
 //
 //  EmployeeTableViewController.swift
-//  Dapartment Manager
+//  Department Manager
 //
 //  Created by Igor Vallim on 13/10/2018.
 //  Copyright © 2018 Igor Vallim. All rights reserved.
@@ -136,6 +136,13 @@ class EmployeeTableViewController: UITableViewController {
             let selectedEmployee = depEmployees[indexPath.row]
             employeeDetailViewController.employee = selectedEmployee
             
+        case "editDepartment":
+            guard let departmentDetailViewController = segue.destination as? DepartmentViewController else {
+                fatalError("Unexpected destination: \(segue.destination)")
+            }
+            
+            departmentDetailViewController.department = department
+            
         default:
             fatalError("Unexpected Segue Identifier; \(String(describing: segue.identifier))")
         }
@@ -152,7 +159,7 @@ class EmployeeTableViewController: UITableViewController {
         
         let emp1  = Employee(name: "Robson", depId: 1, rg: 123456789, photo: photo1)
         let emp2  = Employee(name: "Daniela", depId: 2, rg: 987654321, photo: photo2)
-        let emp3  = Employee(name: "Camila", depId: 3, rg: 012345678, photo: photo3)
+        let emp3  = Employee(name: "Camila", depId: 3, rg: 123456780, photo: photo3)
         
         employees += [emp1, emp2, emp3]
     }

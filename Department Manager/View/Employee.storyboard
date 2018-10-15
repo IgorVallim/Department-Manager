@@ -32,6 +32,17 @@
                                 </navigationItem>
                             </items>
                         </navigationBar>
+                        <toolbar key="tableFooterView" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="RkS-Jq-zBH">
+                            <rect key="frame" x="0.0" y="162" width="375" height="44"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                            <items>
+                                <barButtonItem title="Edit Department" id="qnx-Y0-YQc">
+                                    <connections>
+                                        <segue destination="PpA-1e-plk" kind="show" identifier="editDepartment" id="hRY-fW-EZn"/>
+                                    </connections>
+                                </barButtonItem>
+                            </items>
+                        </toolbar>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="EmployeeTableViewCell" id="VLe-1U-Pgf" customClass="EmployeeTableViewCell" customModule="Department_Manager" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="72" width="375" height="90"/>
@@ -73,6 +84,8 @@
                             <outlet property="delegate" destination="oHs-IT-pDQ" id="NSu-Ef-QFk"/>
                         </connections>
                     </tableView>
+                    <toolbarItems/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="employeesBar" destination="5TJ-bP-w6H" id="QsU-pW-xnZ"/>
                     </connections>
@@ -80,6 +93,14 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fVa-AH-EX5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-348" y="96.7016491754123"/>
+        </scene>
+        <!--DepartmentViewController-->
+        <scene sceneID="VcE-VV-eRl">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Department" referencedIdentifier="DepartmentViewController" id="PpA-1e-plk" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ojb-0I-OFG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-348" y="558"/>
         </scene>
         <!--Employee View Controller-->
         <scene sceneID="w5P-PO-SEi">

@@ -42,7 +42,7 @@
 		3A0DC4F62171389B00CECC9A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3A0DC4F92171389B00CECC9A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3A0DC4FB2171389B00CECC9A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		3A0DC5002171389B00CECC9A /* Dapartment ManagerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Dapartment ManagerTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3A0DC5002171389B00CECC9A /* Department ManagerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Department ManagerTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A0DC5042171389B00CECC9A /* Department_ManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Department_ManagerTests.swift; sourceTree = "<group>"; };
 		3A0DC5062171389B00CECC9A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3A23C95521718426004DCA67 /* DepartmentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepartmentViewController.swift; sourceTree = "<group>"; };
@@ -116,7 +116,7 @@
 			isa = PBXGroup;
 			children = (
 				3A0DC4EC2171389900CECC9A /* Department Manager.app */,
-				3A0DC5002171389B00CECC9A /* Dapartment ManagerTests.xctest */,
+				3A0DC5002171389B00CECC9A /* Department ManagerTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -179,7 +179,7 @@
 			);
 			name = "Dapartment ManagerTests";
 			productName = "Dapartment ManagerTests";
-			productReference = 3A0DC5002171389B00CECC9A /* Dapartment ManagerTests.xctest */;
+			productReference = 3A0DC5002171389B00CECC9A /* Department ManagerTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -452,14 +452,14 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = "Dapartment ManagerTests/Info.plist";
+				INFOPLIST_FILE = "Department ManagerTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.Dapartment-ManagerTests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.Department-ManagerTests";
+				PRODUCT_NAME = "Department ManagerTests";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Dapartment Manager.app/Dapartment Manager";
@@ -472,14 +472,14 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = "Dapartment ManagerTests/Info.plist";
+				INFOPLIST_FILE = "Department ManagerTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.Dapartment-ManagerTests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.Department-ManagerTests";
+				PRODUCT_NAME = "Department ManagerTests";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Dapartment Manager.app/Dapartment Manager";

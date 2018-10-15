@@ -1,6 +1,6 @@
 //
 //  DepartmentTableViewController.swift
-//  Dapartment Manager
+//  Department Manager
 //
 //  Created by Igor Vallim on 12/10/2018.
 //  Copyright © 2018 Igor Vallim. All rights reserved.

@@ -1,6 +1,6 @@
 //
 //  DepartmentViewController.swift
-//  Dapartment Manager
+//  Department Manager
 //
 //  Created by Igor Vallim on 12/10/2018.
 //  Copyright © 2018 Igor Vallim. All rights reserved.
@@ -28,6 +28,7 @@ class DepartmentViewController: UIViewController, UITextFieldDelegate, UIImagePi
     override func viewDidLoad() {
         super.viewDidLoad()
         name.delegate = self
+        initials.delegate = self
         if let department = department {
             navigationItem.title = department.name
             name.text = department.name
@@ -53,7 +54,7 @@ class DepartmentViewController: UIViewController, UITextFieldDelegate, UIImagePi
     //Funcao que habilita o botao de salvar quando o usuario preenche um campo
     func textFieldDidEndEditing(_ textField: UITextField) {
         updateSaveButtonState()
-        navigationItem.title = textField.text
+        navigationItem.title = name.text
     }
     
     //Funcao que desabilita o botao de salvar enquanto um dos campos de texto estiver vazio
@@ -122,7 +123,12 @@ class DepartmentViewController: UIViewController, UITextFieldDelegate, UIImagePi
         let nameDepart = name.text ?? ""
         let photoDepart = photo.image
         let initialsDepart = initials.text ?? ""
-        department = Department(name: nameDepart, initials: initialsDepart, photo: photoDepart)
+        if let _ = department {
+            department = Department(name: nameDepart, id: (department?.id)!, initials: initialsDepart, photo: photoDepart)
+        }else{
+             department = Department(name: nameDepart, initials: initialsDepart, photo: photoDepart)
+        }
+       
     }
 
 }

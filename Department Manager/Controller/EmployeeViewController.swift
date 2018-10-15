@@ -1,6 +1,6 @@
 //
 //  EmployeeViewController.swift
-//  Dapartment Manager
+//  Department Manager
 //
 //  Created by Igor Vallim on 13/10/2018.
 //  Copyright © 2018 Igor Vallim. All rights reserved.
@@ -28,7 +28,7 @@ class EmployeeViewController: UIViewController, UITextFieldDelegate, UIImagePick
     override func viewDidLoad() {
         super.viewDidLoad()
         name.delegate = self
-        
+        rg.delegate = self
         if let employee = employee {
             navigationItem.title = employee.name
             name.text = employee.name
@@ -56,13 +56,13 @@ class EmployeeViewController: UIViewController, UITextFieldDelegate, UIImagePick
     //Funcao que habilita o botao de salvar quando o usuario preenche um campo
     func textFieldDidEndEditing(_ textField: UITextField) {
         updateSaveButtonState()
-        navigationItem.title = textField.text
+        navigationItem.title = name.text
     }
     
-    //Funcao que desabilita o botao de salvar enquanto um dos campos de texto estiver vazio
+    //Funcao que desabilita o botao de salvar enquanto um dos campos de texto estiver vazio ou o RG for invalido
     private func updateSaveButtonState() {
         let text = name.text ?? ""
-        if let _: Int = Int(rg.text ?? ""), !text.isEmpty{
+        if let _: Int = Int(rg.text ?? ""), !text.isEmpty, rg.text?.count == 9{
             saveButton.isEnabled = true
         }
         

@@ -1,5 +1,5 @@
 //
-//  Dapartment_ManagerTests.swift
+//  Department_ManagerTests.swift
 //  Department ManagerTests
 //
 //  Created by Igor Vallim on 12/10/2018.
@@ -7,9 +7,9 @@
 //
 
 import XCTest
-@testable import Dapartment_Manager
+@testable import Department_Manager
 
-class Dapartment_ManagerTests: XCTestCase {
+class Department_ManagerTests: XCTestCase {
 
     override func setUp() {
         // Put setup code here. This method is called before the invocation of each test method in the class.

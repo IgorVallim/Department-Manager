@@ -26,14 +26,14 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Sigla" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EuE-8V-QCv" userLabel="initials">
-                                            <rect key="frame" x="98" y="11" width="208" height="30"/>
+                                            <rect key="frame" x="98" y="11" width="238" height="30"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="27"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Nome do departamento" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TdB-Qt-yPI" userLabel="name">
-                                            <rect key="frame" x="98" y="49" width="208" height="30"/>
+                                            <rect key="frame" x="98" y="49" width="238" height="30"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="17"/>
                                             <nil key="textColor"/>
@@ -75,7 +75,7 @@
         <!--Department View Controller-->
         <scene sceneID="Ejs-n6-Dox">
             <objects>
-                <viewController id="uOx-B7-JO4" customClass="DepartmentViewController" customModule="Department_Manager" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DepartmentViewController" id="uOx-B7-JO4" customClass="DepartmentViewController" customModule="Department_Manager" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Z88-NR-jmF">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -99,7 +99,7 @@
                                         <rect key="frame" x="0.0" y="76" width="343" height="343"/>
                                         <gestureRecognizers/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="343" id="lFh-3m-Brw"/>
+                                            <constraint firstAttribute="height" constant="343" id="Mh4-0s-vGg"/>
                                         </constraints>
                                         <connections>
                                             <outletCollection property="gestureRecognizers" destination="oLS-sg-cnY" appends="YES" id="YWx-H9-r3v"/>
@@ -189,7 +189,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wPv-Kn-SSX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1050.4000000000001" y="151.57421289355324"/>
+            <point key="canvasLocation" x="-1030" y="152"/>
         </scene>
     </scenes>
     <resources>
